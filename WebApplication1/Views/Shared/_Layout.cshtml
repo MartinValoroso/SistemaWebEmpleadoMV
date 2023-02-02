@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>@ViewBag.Title</title>
+
+
+</head>
+<body>
+
+    <header class="header bg-primary">
+        <h1>SISTEMA Empleado</h1>
+    </header>
+
+    <div id="sidebar">
+        @if (IsSectionDefined("SideBar"))
+        {
+            @RenderSection("SideBar")
+        }
+        else
+        {
+            <h2>Sitio web MVC</h2>
+        }
+    </div>
+
+    <nav class="nav bg-success">
+        @Html.ActionLink("Home","Index","Home", new{@class="textNav"})
+        @Html.ActionLink("Empleado","Index","Empleado", new{@class="textNav"})
+    </nav>
+
+    <main>
+
+        <div id="content">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>info@Empleado.com</p>
+    </footer>
+
+</body>
+</html>
